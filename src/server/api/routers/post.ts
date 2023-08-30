@@ -30,7 +30,7 @@ const rateLimit = new Ratelimit({
 
 export const schemas = {
   content: z.object({
-    content: z.string().emoji().min(1).max(280)
+    content: z.string().emoji("Only emojis are alowed").min(1).max(280)
   }),
 }
 
