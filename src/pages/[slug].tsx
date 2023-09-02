@@ -7,8 +7,31 @@ import { appRouter } from "~/server/api/root";
 import { prisma } from "~/server/db";
 import { PageLayout } from "~/components/layout";
 import Image from 'next/image'
+import { LoadingPage } from "~/components/loading";
+import PostsView from "~/components/Postview";
 
 // type PageProps = InferGetStaticPropsType<typeof getStaticProps>; // like this we can infer what is comming from getStaticProps
+
+const ProfileFeed = (props: { userId: string }) => {
+
+  const { data, isLoading } = api.posts.getPostByUserId.useQuery({ userId: props.userId })
+
+  if (isLoading) return <LoadingPage />
+
+  if (!data || data.length === 0) {
+    return <div>User has not posts.</div>
+  }
+
+  return (
+    <div className="flex flex-col">
+      {data.map((fullpost) => (
+      <PostsView {...fullpost} key={fullpost.post.id} />
+    ))}
+  </div>
+  )
+
+}
+
 
 const ProfilePage: NextPage<{ username: string }> = ({ username }) => {
   const { data } = api.profile.getUserByUsername.useQuery({ username });
@@ -38,6 +61,8 @@ const ProfilePage: NextPage<{ username: string }> = ({ username }) => {
         <div className="p-4 b ml-4 text-2xl font-bold">{showUsrName}</div>
 
         <div className="border-b border-slate-400 w-full"></div>
+
+        <ProfileFeed userId={data.id} />
       </PageLayout >
     </>
   );
