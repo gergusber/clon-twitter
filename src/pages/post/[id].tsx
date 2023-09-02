@@ -7,9 +7,9 @@ export default function PostDetailPage() {
  
   return (
     <>
-      <Head>
-        <title>Create T3 App</title>
-        <meta name="Post" content="Post page" />
+    <Head>
+        <title>TweemogiApp</title>
+        <meta name="description" content="💩" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex h-screen justify-center ">
