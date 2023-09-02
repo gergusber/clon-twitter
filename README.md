@@ -2,6 +2,8 @@
 
 This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
 
+Following tutorial https://www.youtube.com/watch?v=YkOSUVzOAA4 for learning the patterns
+
 ## What's next? How do I make an app with this?
 
 We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
