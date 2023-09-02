@@ -15,7 +15,7 @@ import PostsView from "~/components/Postview";
 
 dayjs.extend(relativetime)
 
-const CreatePostWizzard = () => {
+const CreatePostWizard = () => {
   const { user } = useUser();
   const [input, setInput] = useState<string>("");
   const ctx = api.useContext();
@@ -45,7 +45,7 @@ const CreatePostWizzard = () => {
         height={55}
         className="rounded-full" />
       <input
-        placeholder="Type some emogis"
+        placeholder="Type what u think"
         className="grow bg-transparent outline-none bg-red-200"
         value={input}
         type="text"
@@ -121,7 +121,7 @@ export default function Home() {
 
           {isSignedIn && (
             <div className="flex w-full ">
-              <CreatePostWizzard />
+              <CreatePostWizard />
             </div>
           )}
         </div>
