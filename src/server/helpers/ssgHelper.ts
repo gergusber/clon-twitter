@@ -1,6 +1,3 @@
-import Head from "next/head";
-import type { GetStaticProps, NextPage } from "next";
-import { api } from "~/utils/api";
 import superjson from 'superjson';
 import { prisma } from "~/server/db";
 import { appRouter } from "../api/root";

@@ -29,7 +29,6 @@ const ProfileFeed = (props: { userId: string }) => {
     ))}
   </div>
   )
-
 }
 
 
