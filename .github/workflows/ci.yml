@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      DATABASE_URL: "fakeUrl"
+      DATABASE_URL: "https://fake.com"
       NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: 'fakeUrl'
       CLERK_SECRET_KEY: 'fakeUrl'
       UPSTASH_REDIS_REST_URL: "fakeUrl"
